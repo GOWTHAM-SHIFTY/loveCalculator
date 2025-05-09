@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator 💖(shifty)</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ea411c, #e74db1);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            background: linear-gradient(145deg, #7c7cea, #3e98a8);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            font-family:'Times New Roman', Times, serif
+        }
+        input {
+            width: 80%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            font-size: 1rem;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #e87961, #df74b9);
+            color: white;
+            padding: 12px 25px;
+            margin-top: 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        }
+        button:hover {
+            transform: scale(1.1);
+            color: red;
+        }
+        #result {
+            margin-top: 30px;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💖 Love Calculator 💖</h1>
+        <input id="partner1" type="text" placeholder="Enter your name" />
+        <input id="partner2" type="text" placeholder="Enter your partner Name" />
+        <button onclick="calculateLove()">Calculate Love 💌</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateLove() {
+            const partner1 = document.getElementById('partner1').value.trim();
+            const partner2 = document.getElementById('partner2').value.trim();
+            const resultDiv = document.getElementById('result');
+    
+            if (partner1 === '' || partner2 === '') {
+                resultDiv.innerHTML = 'Please enter both names!';
+                return;
+            }
+
+            const loveScore = Math.floor(Math.random() * 41) + 60;
+    
+            let message = '';
+            if (loveScore > 90) {
+                message = '💘 Your hearts beat as one – a match written in the stars!';
+            } else if (loveScore > 80) {
+                message = '💕 True love alert – your bond is unbreakable!';
+            } else if (loveScore > 70) {
+                message = '💖 A beautiful connection that gets better every day!';
+            } else {
+                message = '❤️ You both make a charming and caring duo!';
+            }
+    
+            resultDiv.innerHTML = `Love Score: ${loveScore}%<br>${message}`;
+        }
+    </script>
+    
+</body>
+</html>
